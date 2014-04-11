@@ -66,7 +66,8 @@
     <p style="height: 45px" id="Results">
         <div>
             <p>
-                Compatibility between switches 1 and 2
+                <b>
+                Compatibility between switches 1 and 2</b>
             </p>
         </div>
         <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource5" Visible ="False" CellPadding="4" ForeColor="#333333">
@@ -141,7 +142,7 @@
             <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
             <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
         </asp:FormView>
-        <asp:SqlDataSource ID="SqlDataSource11" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Over10g] FROM [stacksWith10g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+        <asp:SqlDataSource ID="SqlDataSource11" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Over10g] FROM [stacksWith10g] WHERE (([bottomSwName] = @bottomSwName) AND ([upperSwName] = @upperSwName)OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList4" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
                 <asp:ControlParameter ControlID="DropDownList5" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
@@ -180,8 +181,8 @@
             <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
         </asp:FormView>
                 <div>
-            <p>
-                Compatibility between switches 2 and 3
+            <p><b>
+                Compatibility between switches 2 and 3</b>
             </p>
         </div>
         <asp:FormView ID="FormView4" runat="server" CellPadding="4" DataSourceID="SqlDataSource8" ForeColor="#333333" Visible ="False">
@@ -253,14 +254,11 @@
         </asp:SqlDataSource>
                 <div>
             <p>
-                Compatibility between switches 3 and 4
+                <b>
+                Compatibility between switches 3 and 4</b>
             </p>
         </div>
-        <div>
-            <p>
-                Compatibility between the last and the first switches
-            </p>
-        </div>
+
         <asp:FormView ID="FormView6" runat="server" DataSourceID="SqlDataSource10" Visible ="False">
             <EditItemTemplate>
                 over160g:
@@ -283,6 +281,7 @@
 
             </ItemTemplate>
         </asp:FormView>
+
         <asp:FormView ID="FormView7" runat="server" DataSourceID="SqlDataSource11" Visible ="False">
             <EditItemTemplate>
                 Over10g:
@@ -305,6 +304,7 @@
 
             </ItemTemplate>
         </asp:FormView>
+
         <asp:FormView ID="FormView8" runat="server" DataSourceID="SqlDataSource12" Visible ="False">
             <EditItemTemplate>
                 Over80g:
@@ -379,6 +379,11 @@
             <asp:ControlParameter ControlID="DropDownList5" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
+                <div>
+            <p><b>
+                Compatibility between the last and the first switches</b>
+            </p>
+        </div>
     <asp:FormView ID="FormView10" runat="server" DataSourceID="SqlDataSource14" Visible ="false">
         <EditItemTemplate>
             Over10g:
