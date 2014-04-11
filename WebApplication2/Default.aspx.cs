@@ -102,11 +102,21 @@ namespace WebApplication2
                         FormView4.Visible = true;
                         FormView5.Visible = true;
                         FormView6.Visible = true;
+                        //FormViews for last to first
+                        FormView10.Enabled = true;
+                        FormView11.Enabled = true;
+                        FormView12.Enabled = true;
                         if (DropDownList5.Enabled)
                         {
                             FormView7.Visible = true;
                             FormView8.Visible = true;
                             FormView9.Visible = true;
+                            FormView13.Visible = true;
+                            FormView14.Visible = true;
+                            FormView15.Visible = true;
+                            FormView10.Enabled = false;
+                            FormView11.Enabled = false;
+                            FormView12.Enabled = false;
                         }
                     }
                 }

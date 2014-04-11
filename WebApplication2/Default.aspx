@@ -56,14 +56,14 @@
         &nbsp;</p>
     <p style="height: 33px">
         <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Validate Stacking" />
-        <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Over10g] FROM [stacksWith10g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName))">
+        <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Over10g] FROM [stacksWith10g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList3" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
                 <asp:ControlParameter ControlID="DropDownList2" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
 </p>
-    <p style="height: 857px" id="Results">
+    <p style="height: 45px" id="Results">
         <div>
             <p>
                 Compatibility between switches 1 and 2
@@ -96,19 +96,19 @@
             <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
             <RowStyle BackColor="#EFF3FB" />
         </asp:FormView>
-        <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Over80g] FROM [stacksWith 80G] WHERE (([bottomSwName] = @bottomSwName) AND ([upperSwName] = @upperSwName))">
+        <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Over80g] FROM [stacksWith 80G] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList2" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
                 <asp:ControlParameter ControlID="DropDownList3" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
-        <asp:SqlDataSource ID="SqlDataSource12" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Over80g] FROM [stacksWith 80G] WHERE (([bottomSwName] = @bottomSwName) AND ([upperSwName] = @upperSwName))">
+        <asp:SqlDataSource ID="SqlDataSource12" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Over80g] FROM [stacksWith 80G] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList4" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
                 <asp:ControlParameter ControlID="DropDownList5" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
-        <asp:SqlDataSource ID="SqlDataSource13" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [over160g] FROM [stacksWith160g] WHERE (([bottomSwName] = @bottomSwName) AND ([upperSwName] = @upperSwName))">
+        <asp:SqlDataSource ID="SqlDataSource13" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [over160g] FROM [stacksWith160g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList4" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
                 <asp:ControlParameter ControlID="DropDownList5" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
@@ -141,13 +141,13 @@
             <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
             <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
         </asp:FormView>
-        <asp:SqlDataSource ID="SqlDataSource11" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Over10g] FROM [stacksWith10g] WHERE (([bottomSwName] = @bottomSwName) AND ([upperSwName] = @upperSwName))">
+        <asp:SqlDataSource ID="SqlDataSource11" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Over10g] FROM [stacksWith10g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList4" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
                 <asp:ControlParameter ControlID="DropDownList5" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
-        <asp:SqlDataSource ID="SqlDataSource10" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [over160g] FROM [stacksWith160g] WHERE (([bottomSwName] = @bottomSwName) AND ([upperSwName] = @upperSwName))">
+        <asp:SqlDataSource ID="SqlDataSource10" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [over160g] FROM [stacksWith160g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList3" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
                 <asp:ControlParameter ControlID="DropDownList4" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
@@ -211,13 +211,13 @@
             <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
             <RowStyle BackColor="#EFF3FB" />
         </asp:FormView>
-        <asp:SqlDataSource ID="SqlDataSource9" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Over80g] FROM [stacksWith 80G] WHERE (([bottomSwName] = @bottomSwName) AND ([upperSwName] = @upperSwName))">
+        <asp:SqlDataSource ID="SqlDataSource9" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Over80g] FROM [stacksWith 80G] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList3" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
                 <asp:ControlParameter ControlID="DropDownList4" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
-        <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Over10g] FROM [stacksWith10g] WHERE (([bottomSwName] = @bottomSwName) AND ([upperSwName] = @upperSwName))">
+        <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Over10g] FROM [stacksWith10g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList3" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
                 <asp:ControlParameter ControlID="DropDownList4" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
@@ -245,7 +245,7 @@
 
             </ItemTemplate>
         </asp:FormView>
-        <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [over160g] FROM [stacksWith160g] WHERE (([bottomSwName] = @bottomSwName) AND ([upperSwName] = @upperSwName))">
+        <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [over160g] FROM [stacksWith160g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList2" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
                 <asp:ControlParameter ControlID="DropDownList3" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
@@ -254,6 +254,11 @@
                 <div>
             <p>
                 Compatibility between switches 3 and 4
+            </p>
+        </div>
+        <div>
+            <p>
+                Compatibility between the last and the first switches
             </p>
         </div>
         <asp:FormView ID="FormView6" runat="server" DataSourceID="SqlDataSource10" Visible ="False">
@@ -344,5 +349,173 @@
 
             </ItemTemplate>
         </asp:FormView>
+    <asp:SqlDataSource ID="SqlDataSource14" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [Over10g] FROM [stacksWith10g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="DropDownList2" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
+            <asp:ControlParameter ControlID="DropDownList4" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource15" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [Over80g] FROM [stacksWith 80G] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="DropDownList2" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
+            <asp:ControlParameter ControlID="DropDownList4" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource16" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [over160g] FROM [stacksWith160g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="DropDownList2" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
+            <asp:ControlParameter ControlID="DropDownList4" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource17" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [Over10g] FROM [stacksWith10g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="DropDownList2" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
+            <asp:ControlParameter ControlID="DropDownList5" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource18" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [Over80g] FROM [stacksWith 80G] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="DropDownList2" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
+            <asp:ControlParameter ControlID="DropDownList5" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <asp:FormView ID="FormView10" runat="server" DataSourceID="SqlDataSource14" Visible ="false">
+        <EditItemTemplate>
+            Over10g:
+            <asp:TextBox ID="Over10gTextBox" runat="server" Text='<%# Bind("Over10g") %>' />
+            <br />
+            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+        </EditItemTemplate>
+        <InsertItemTemplate>
+            Over10g:
+            <asp:TextBox ID="Over10gTextBox" runat="server" Text='<%# Bind("Over10g") %>' />
+            <br />
+            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+        </InsertItemTemplate>
+        <ItemTemplate>
+            Over10g:
+            <asp:Label ID="Over10gLabel" runat="server" Text='<%# Bind("Over10g") %>' />
+            <br />
+
+        </ItemTemplate>
+    </asp:FormView>
+    <asp:SqlDataSource ID="SqlDataSource19" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [over160g] FROM [stacksWith160g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="DropDownList2" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
+            <asp:ControlParameter ControlID="DropDownList5" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <asp:FormView ID="FormView11" runat="server" DataSourceID="SqlDataSource15" Visible ="false">
+        <EditItemTemplate>
+            Over80g:
+            <asp:TextBox ID="Over80gTextBox" runat="server" Text='<%# Bind("Over80g") %>' />
+            <br />
+            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+        </EditItemTemplate>
+        <InsertItemTemplate>
+            Over80g:
+            <asp:TextBox ID="Over80gTextBox" runat="server" Text='<%# Bind("Over80g") %>' />
+            <br />
+            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+        </InsertItemTemplate>
+        <ItemTemplate>
+            Over80g:
+            <asp:Label ID="Over80gLabel" runat="server" Text='<%# Bind("Over80g") %>' />
+            <br />
+
+        </ItemTemplate>
+    </asp:FormView>
+    <asp:FormView ID="FormView12" runat="server" DataSourceID="SqlDataSource16" Visible ="false">
+        <EditItemTemplate>
+            over160g:
+            <asp:TextBox ID="over160gTextBox" runat="server" Text='<%# Bind("over160g") %>' />
+            <br />
+            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+        </EditItemTemplate>
+        <InsertItemTemplate>
+            over160g:
+            <asp:TextBox ID="over160gTextBox" runat="server" Text='<%# Bind("over160g") %>' />
+            <br />
+            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+        </InsertItemTemplate>
+        <ItemTemplate>
+            over160g:
+            <asp:Label ID="over160gLabel" runat="server" Text='<%# Bind("over160g") %>' />
+            <br />
+
+        </ItemTemplate>
+    </asp:FormView>
+    <asp:FormView ID="FormView13" runat="server" DataSourceID="SqlDataSource17" Visible ="false">
+        <EditItemTemplate>
+            Over10g:
+            <asp:TextBox ID="Over10gTextBox" runat="server" Text='<%# Bind("Over10g") %>' />
+            <br />
+            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+        </EditItemTemplate>
+        <InsertItemTemplate>
+            Over10g:
+            <asp:TextBox ID="Over10gTextBox" runat="server" Text='<%# Bind("Over10g") %>' />
+            <br />
+            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+        </InsertItemTemplate>
+        <ItemTemplate>
+            Over10g:
+            <asp:Label ID="Over10gLabel" runat="server" Text='<%# Bind("Over10g") %>' />
+            <br />
+
+        </ItemTemplate>
+    </asp:FormView>
+            <asp:FormView ID="FormView14" runat="server" DataSourceID="SqlDataSource18" Visible ="false">
+        <EditItemTemplate>
+            Over80g:
+            <asp:TextBox ID="Over80gTextBox" runat="server" Text='<%# Bind("Over80g") %>' />
+            <br />
+            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+        </EditItemTemplate>
+        <InsertItemTemplate>
+            Over80g:
+            <asp:TextBox ID="Over80gTextBox" runat="server" Text='<%# Bind("Over80g") %>' />
+            <br />
+            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+        </InsertItemTemplate>
+        <ItemTemplate>
+            Over80g:
+            <asp:Label ID="Over80gLabel" runat="server" Text='<%# Bind("Over80g") %>' />
+            <br />
+
+        </ItemTemplate>
+    </asp:FormView>
+    <asp:FormView ID="FormView15" runat="server" DataSourceID="SqlDataSource19" Visible ="false">
+        <EditItemTemplate>
+            over160g:
+            <asp:TextBox ID="over160gTextBox" runat="server" Text='<%# Bind("over160g") %>' />
+            <br />
+            <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+            &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+        </EditItemTemplate>
+        <InsertItemTemplate>
+            over160g:
+            <asp:TextBox ID="over160gTextBox" runat="server" Text='<%# Bind("over160g") %>' />
+            <br />
+            <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+            &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+        </InsertItemTemplate>
+        <ItemTemplate>
+            over160g:
+            <asp:Label ID="over160gLabel" runat="server" Text='<%# Bind("over160g") %>' />
+            <br />
+
+        </ItemTemplate>
+    </asp:FormView>
 </p>
 </asp:Content>
