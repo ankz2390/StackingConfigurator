@@ -25,7 +25,7 @@ namespace WebApplication2
 
         protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
         {
-           
+
         }
 
         protected void DropDownList2_SelectedIndexChanged(object sender, EventArgs e)
@@ -40,15 +40,15 @@ namespace WebApplication2
 
         protected void DropDownList4_SelectedIndexChanged(object sender, EventArgs e)
         {
-        
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if(!DropDownList2.Enabled)
+            if (!DropDownList2.Enabled)
                 DropDownList2.Enabled = true;
-            else            
-                DropDownList2.Enabled = false;            
+            else
+                DropDownList2.Enabled = false;
         }
 
         protected void Button2_Click(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace WebApplication2
             if (!DropDownList3.Enabled)
                 DropDownList3.Enabled = true;
             else
-                DropDownList3.Enabled = false;       
+                DropDownList3.Enabled = false;
         }
 
         protected void Button3_Click(object sender, EventArgs e)
@@ -64,7 +64,7 @@ namespace WebApplication2
             if (!DropDownList4.Enabled)
                 DropDownList4.Enabled = true;
             else
-                DropDownList4.Enabled = false;       
+                DropDownList4.Enabled = false;
         }
 
         protected void Button4_Click(object sender, EventArgs e)
@@ -72,12 +72,12 @@ namespace WebApplication2
             if (!DropDownList5.Enabled)
                 DropDownList5.Enabled = true;
             else
-                DropDownList5.Enabled = false;       
+                DropDownList5.Enabled = false;
         }
 
         protected void Button5_Click(object sender, EventArgs e)
         {
-            if(DropDownList2.Enabled)
+            if (DropDownList2.Enabled)
                 if (DropDownList3.Enabled)
                 {
                     /*StringBuilder outputText = new StringBuilder();
@@ -99,6 +99,15 @@ namespace WebApplication2
                     FormView3.Visible = true;
                     if (DropDownList4.Enabled)
                     {
+                        FormView4.Visible = true;
+                        FormView5.Visible = true;
+                        FormView6.Visible = true;
+                        if (DropDownList5.Enabled)
+                        {
+                            FormView7.Visible = true;
+                            FormView8.Visible = true;
+                            FormView9.Visible = true;
+                        }
                     }
                 }
         }
