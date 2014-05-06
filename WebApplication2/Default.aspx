@@ -56,7 +56,7 @@
         &nbsp;</p>
     <p style="height: 33px">
         <asp:Button ID="Button5" runat="server" OnClick="Button5_Click" Text="Validate Stacking" />
-        <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Over10g] FROM [stacksWith10g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+        <asp:SqlDataSource ID="SqlDataSource5" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [Over10g] FROM [stacksWith10g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList3" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
                 <asp:ControlParameter ControlID="DropDownList2" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
@@ -64,12 +64,14 @@
         </asp:SqlDataSource>
 </p>
     <p style="height: 45px" id="Results">
-        <div>
+        
             <p>
+                  <asp:panel ID="Panel12" runat="server" Visible="false"> 
                 <b>
                 Compatibility between switches 1 and 2</b>
+                </asp:panel>
             </p>
-        </div>
+ 
         <asp:FormView ID="FormView1" runat="server" DataSourceID="SqlDataSource5" Visible ="False" CellPadding="4" ForeColor="#333333">
             <EditItemTemplate>
                 Over10g:
@@ -97,19 +99,19 @@
             <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
             <RowStyle BackColor="#EFF3FB" />
         </asp:FormView>
-        <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Over80g] FROM [stacksWith 80G] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+        <asp:SqlDataSource ID="SqlDataSource6" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [Over80g] FROM [stacksWith 80G] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList2" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
                 <asp:ControlParameter ControlID="DropDownList3" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
-        <asp:SqlDataSource ID="SqlDataSource12" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Over80g] FROM [stacksWith 80G] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+        <asp:SqlDataSource ID="SqlDataSource12" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [Over80g] FROM [stacksWith 80G] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList4" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
                 <asp:ControlParameter ControlID="DropDownList5" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
-        <asp:SqlDataSource ID="SqlDataSource13" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [over160g] FROM [stacksWith160g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+        <asp:SqlDataSource ID="SqlDataSource13" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [over160g] FROM [stacksWith160g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList4" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
                 <asp:ControlParameter ControlID="DropDownList5" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
@@ -142,19 +144,19 @@
             <PagerStyle ForeColor="#8C4510" HorizontalAlign="Center" />
             <RowStyle BackColor="#FFF7E7" ForeColor="#8C4510" />
         </asp:FormView>
-        <asp:SqlDataSource ID="SqlDataSource11" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Over10g] FROM [stacksWith10g] WHERE (([bottomSwName] = @bottomSwName) AND ([upperSwName] = @upperSwName)OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+        <asp:SqlDataSource ID="SqlDataSource11" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [Over10g] FROM [stacksWith10g] WHERE (([bottomSwName] = @bottomSwName) AND ([upperSwName] = @upperSwName)OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList4" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
                 <asp:ControlParameter ControlID="DropDownList5" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
-        <asp:SqlDataSource ID="SqlDataSource10" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [over160g] FROM [stacksWith160g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+        <asp:SqlDataSource ID="SqlDataSource10" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [over160g] FROM [stacksWith160g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList3" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
                 <asp:ControlParameter ControlID="DropDownList4" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
-        <asp:FormView ID="FormView3" runat="server" CellPadding="4" DataSourceID="SqlDataSource7" ForeColor="#333333" Visible ="false">
+        <asp:FormView ID="FormView3" runat="server" CellPadding="4" DataSourceID="SqlDataSource25" ForeColor="#333333" Visible ="false">
             <EditItemTemplate>
                 over160g:
                 <asp:TextBox ID="over160gTextBox" runat="server" Text='<%# Bind("over160g") %>' />
@@ -180,11 +182,64 @@
             <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
             <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
         </asp:FormView>
-                <div>
+        <asp:FormView ID="FormView16" runat="server" CellPadding="4" DataSourceID="SqlDataSource20" ForeColor="#333333" Visible ="false">
+            <EditItemTemplate>
+                Over320g:
+                <asp:TextBox ID="Over320gTextBox" runat="server" Text='<%# Bind("Over320g") %>' />
+                <br />
+                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </EditItemTemplate>
+            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <InsertItemTemplate>
+                Over320g:
+                <asp:TextBox ID="Over320gTextBox" runat="server" Text='<%# Bind("Over320g") %>' />
+                <br />
+                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </InsertItemTemplate>
+            <ItemTemplate>
+                Over320g:
+                <asp:Label ID="Over320gLabel" runat="server" Text='<%# Bind("Over320g") %>' />
+                <br />
+
+            </ItemTemplate>
+            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+        </asp:FormView>
+        <asp:FormView ID="FormView6" runat="server" CellPadding="4" DataSourceID="SqlDataSource26" ForeColor="#333333" Visible ="false">
+            <EditItemTemplate>
+                Regular Stacking:
+                <asp:TextBox ID="RegukarStackingTextBox" runat="server" Text='<%# Bind("RegularStack") %>' />
+                <br />
+                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </EditItemTemplate>
+            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <InsertItemTemplate>
+                Regular Stacking:
+                <asp:TextBox ID="RegukarStackingTextBox" runat="server" Text='<%# Bind("RegularStack") %>' />
+                <br />
+                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </InsertItemTemplate>
+            <ItemTemplate>
+                 Regular Stacking:
+                <asp:Label ID="RegukarStackingLabel" runat="server" Text='<%# Bind("RegularStack") %>' />
+                <br />
+
+            </ItemTemplate>
+            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+        </asp:FormView>        
             <p><b>
-                Compatibility between switches 2 and 3</b>
+                  <asp:panel ID="Panel23" runat="server" Visible="false"> 
+                Compatibility between switches 2 and 3
+                </asp:panel></b>
             </p>
-        </div>
+
         <asp:FormView ID="FormView4" runat="server" CellPadding="4" DataSourceID="SqlDataSource8" ForeColor="#333333" Visible ="False">
             <EditItemTemplate>
                 Over10g:
@@ -212,13 +267,13 @@
             <PagerStyle BackColor="#2461BF" ForeColor="White" HorizontalAlign="Center" />
             <RowStyle BackColor="#EFF3FB" />
         </asp:FormView>
-        <asp:SqlDataSource ID="SqlDataSource9" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Over80g] FROM [stacksWith 80G] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+        <asp:SqlDataSource ID="SqlDataSource9" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [Over80g] FROM [stacksWith 80G] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList3" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
                 <asp:ControlParameter ControlID="DropDownList4" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
-        <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [Over10g] FROM [stacksWith10g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+        <asp:SqlDataSource ID="SqlDataSource8" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [Over10g] FROM [stacksWith10g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList3" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
                 <asp:ControlParameter ControlID="DropDownList4" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
@@ -246,20 +301,19 @@
 
             </ItemTemplate>
         </asp:FormView>
-        <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [over160g] FROM [stacksWith160g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+        <asp:SqlDataSource ID="SqlDataSource7" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [over160g] FROM [stacksWith160g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="DropDownList3" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
+                <asp:ControlParameter ControlID="DropDownList4" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+                <asp:SqlDataSource ID="SqlDataSource25" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [over160g] FROM [stacksWith160g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
             <SelectParameters>
                 <asp:ControlParameter ControlID="DropDownList2" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
                 <asp:ControlParameter ControlID="DropDownList3" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
             </SelectParameters>
         </asp:SqlDataSource>
-                <div>
-            <p>
-                <b>
-                Compatibility between switches 3 and 4</b>
-            </p>
-        </div>
-
-        <asp:FormView ID="FormView6" runat="server" DataSourceID="SqlDataSource10" Visible ="False">
+         <asp:FormView ID="FormView17" runat="server" CellPadding="4" DataSourceID="SqlDataSource7" ForeColor="#333333" Visible ="false">
             <EditItemTemplate>
                 over160g:
                 <asp:TextBox ID="over160gTextBox" runat="server" Text='<%# Bind("over160g") %>' />
@@ -267,6 +321,8 @@
                 <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
                 &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
             </EditItemTemplate>
+            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
             <InsertItemTemplate>
                 over160g:
                 <asp:TextBox ID="over160gTextBox" runat="server" Text='<%# Bind("over160g") %>' />
@@ -280,7 +336,66 @@
                 <br />
 
             </ItemTemplate>
+            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
         </asp:FormView>
+        <asp:FormView ID="FormView18" runat="server" CellPadding="4" DataSourceID="SqlDataSource21" ForeColor="#333333" Visible ="false">
+            <EditItemTemplate>
+                over320g:
+                <asp:TextBox ID="over320gTextBox" runat="server" Text='<%# Bind("Over320g") %>' />
+                <br />
+                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </EditItemTemplate>
+            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <InsertItemTemplate>
+                over320g:
+                <asp:TextBox ID="over320gTextBox" runat="server" Text='<%# Bind("Over320g") %>' />
+                <br />
+                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </InsertItemTemplate>
+            <ItemTemplate>
+                over320g:
+                <asp:Label ID="over320gLabel" runat="server" Text='<%# Bind("Over320g") %>' />
+                <br />
+
+            </ItemTemplate>
+            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+        </asp:FormView> 
+         <asp:FormView ID="FormView22" runat="server" CellPadding="4" DataSourceID="SqlDataSource27" ForeColor="#333333" Visible ="false">
+            <EditItemTemplate>
+                Regular Stacking:
+                <asp:TextBox ID="RegukarStackingTextBox" runat="server" Text='<%# Bind("RegularStack") %>' />
+                <br />
+                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </EditItemTemplate>
+            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <InsertItemTemplate>
+                Regular Stacking:
+                <asp:TextBox ID="RegularStackingTextBox" runat="server" Text='<%# Bind("RegularStack") %>' />
+                <br />
+                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </InsertItemTemplate>
+            <ItemTemplate>
+                 Regular Stacking:
+                <asp:Label ID="RegukarStackingLabel" runat="server" Text='<%# Bind("RegularStack") %>' />
+                <br />
+
+            </ItemTemplate>
+            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+        </asp:FormView>                
+            <p>        
+                 <asp:panel ID="Panel34" runat="server" Visible="false">        
+               <b> Compatibility between switches 3 and 4</b>
+                </asp:panel>
+            </p>
 
         <asp:FormView ID="FormView7" runat="server" DataSourceID="SqlDataSource11" Visible ="False">
             <EditItemTemplate>
@@ -349,6 +464,58 @@
 
             </ItemTemplate>
         </asp:FormView>
+          <asp:FormView ID="FormView19" runat="server" CellPadding="4" DataSourceID="SqlDataSource22" ForeColor="#333333" Visible ="false">
+            <EditItemTemplate>
+                over320g:
+                <asp:TextBox ID="over160gTextBox" runat="server" Text='<%# Bind("Over320g") %>' />
+                <br />
+                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </EditItemTemplate>
+            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <InsertItemTemplate>
+                over320g:
+                <asp:TextBox ID="over160gTextBox" runat="server" Text='<%# Bind("Over320g") %>' />
+                <br />
+                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </InsertItemTemplate>
+            <ItemTemplate>
+                over320g:
+                <asp:Label ID="over160gLabel" runat="server" Text='<%# Bind("Over320g") %>' />
+                <br />
+
+            </ItemTemplate>
+            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+        </asp:FormView>
+         <asp:FormView ID="FormView23" runat="server" CellPadding="4" DataSourceID="SqlDataSource28" ForeColor="#333333" Visible ="false">
+            <EditItemTemplate>
+                Regular Stacking:
+                <asp:TextBox ID="RegukarStackingTextBox" runat="server" Text='<%# Bind("RegularStack") %>' />
+                <br />
+                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </EditItemTemplate>
+            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <InsertItemTemplate>
+                Regular Stacking:
+                <asp:TextBox ID="RegukarStackingTextBox" runat="server" Text='<%# Bind("RegularStack") %>' />
+                <br />
+                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </InsertItemTemplate>
+            <ItemTemplate>
+                 Regular Stacking:
+                <asp:Label ID="RegukarStackingLabel" runat="server" Text='<%# Bind("RegularStack") %>' />
+                <br />
+
+            </ItemTemplate>
+            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+        </asp:FormView>            
     <asp:SqlDataSource ID="SqlDataSource14" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [Over10g] FROM [stacksWith10g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
         <SelectParameters>
             <asp:ControlParameter ControlID="DropDownList2" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
@@ -361,7 +528,7 @@
             <asp:ControlParameter ControlID="DropDownList4" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
-    <asp:SqlDataSource ID="SqlDataSource16" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT [over160g] FROM [stacksWith160g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+    <asp:SqlDataSource ID="SqlDataSource16" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [over160g] FROM [stacksWith160g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
         <SelectParameters>
             <asp:ControlParameter ControlID="DropDownList2" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
             <asp:ControlParameter ControlID="DropDownList4" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
@@ -379,11 +546,11 @@
             <asp:ControlParameter ControlID="DropDownList5" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
-                <div>
+           <asp:panel ID="Panelfirstlast" runat="server" Visible="false"> 
             <p><b>
                 Compatibility between the last and the first switches</b>
             </p>
-        </div>
+        </asp:panel>
     <asp:FormView ID="FormView10" runat="server" DataSourceID="SqlDataSource14" Visible ="false">
         <EditItemTemplate>
             Over10g:
@@ -412,6 +579,67 @@
             <asp:ControlParameter ControlID="DropDownList5" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
         </SelectParameters>
     </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource20" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [Over320g] FROM [stacksWith320g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="DropDownList2" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
+            <asp:ControlParameter ControlID="DropDownList3" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+    <asp:SqlDataSource ID="SqlDataSource21" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [Over320g] FROM [stacksWith320g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="DropDownList3" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
+            <asp:ControlParameter ControlID="DropDownList4" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource22" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [Over320g] FROM [stacksWith320g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="DropDownList4" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
+            <asp:ControlParameter ControlID="DropDownList5" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+
+    <asp:SqlDataSource ID="SqlDataSource23" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [Over320g] FROM [stacksWith320g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="DropDownList2" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
+            <asp:ControlParameter ControlID="DropDownList5" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource24" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [Over320g] FROM [stacksWith320g] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+        <SelectParameters>
+            <asp:ControlParameter ControlID="DropDownList2" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
+            <asp:ControlParameter ControlID="DropDownList4" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
+        </SelectParameters>
+    </asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource26" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [RegularStack] FROM [RegularStacking] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="DropDownList2" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
+                <asp:ControlParameter ControlID="DropDownList3" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource27" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [RegularStack] FROM [RegularStacking] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="DropDownList3" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
+                <asp:ControlParameter ControlID="DropDownList4" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource28" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [RegularStack] FROM [RegularStacking] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="DropDownList4" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
+                <asp:ControlParameter ControlID="DropDownList5" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource29" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [RegularStack] FROM [RegularStacking] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="DropDownList2" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
+                <asp:ControlParameter ControlID="DropDownList5" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
+        <asp:SqlDataSource ID="SqlDataSource30" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" ProviderName="<%$ ConnectionStrings:ConnectionString.ProviderName %>" SelectCommand="SELECT DISTINCT [RegularStacking] FROM [RegularStacking] WHERE (([upperSwName] = @upperSwName) AND ([bottomSwName] = @bottomSwName) OR ([upperSwName] = @bottomSwName) AND ([bottomSwName] = @upperSwName))">
+            <SelectParameters>
+                <asp:ControlParameter ControlID="DropDownList2" Name="bottomSwName" PropertyName="SelectedValue" Type="String" />
+                <asp:ControlParameter ControlID="DropDownList4" Name="upperSwName" PropertyName="SelectedValue" Type="String" />
+            </SelectParameters>
+        </asp:SqlDataSource>
     <asp:FormView ID="FormView11" runat="server" DataSourceID="SqlDataSource15" Visible ="false">
         <EditItemTemplate>
             Over80g:
@@ -456,6 +684,32 @@
 
         </ItemTemplate>
     </asp:FormView>
+         <asp:FormView ID="FormView20" runat="server" CellPadding="4" DataSourceID="SqlDataSource24" ForeColor="#333333" Visible ="false">
+            <EditItemTemplate>
+                Over320g:
+                <asp:TextBox ID="Over320gTextBox" runat="server" Text='<%# Bind("Over320g") %>' />
+                <br />
+                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </EditItemTemplate>
+            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <InsertItemTemplate>
+                Over320g:
+                <asp:TextBox ID="Over320gTextBox" runat="server" Text='<%# Bind("Over320g") %>' />
+                <br />
+                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </InsertItemTemplate>
+            <ItemTemplate>
+                Over320g:
+                <asp:Label ID="Over320gLabel" runat="server" Text='<%# Bind("Over320g") %>' />
+                <br />
+
+            </ItemTemplate>
+            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+        </asp:FormView>
     <asp:FormView ID="FormView13" runat="server" DataSourceID="SqlDataSource17" Visible ="false">
         <EditItemTemplate>
             Over10g:
@@ -522,5 +776,109 @@
 
         </ItemTemplate>
     </asp:FormView>
+<asp:FormView ID="FormView21" runat="server" CellPadding="4" DataSourceID="SqlDataSource23" ForeColor="#333333" Visible ="false">
+            <EditItemTemplate>
+                Over320g:
+                <asp:TextBox ID="Over320gTextBox" runat="server" Text='<%# Bind("Over320g") %>' />
+                <br />
+                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </EditItemTemplate>
+            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <InsertItemTemplate>
+                Over320g:
+                <asp:TextBox ID="Over320gTextBox" runat="server" Text='<%# Bind("Over320g") %>' />
+                <br />
+                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </InsertItemTemplate>
+            <ItemTemplate>
+                Over320g:
+                <asp:Label ID="Over320gLabel" runat="server" Text='<%# Bind("Over320g") %>' />
+                <br />
+
+            </ItemTemplate>
+            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+        </asp:FormView>
+        <asp:FormView ID="FormView24" runat="server" CellPadding="4" DataSourceID="SqlDataSource29" ForeColor="#333333" Visible ="false">
+            <EditItemTemplate>
+                Regular Stacking:
+                <asp:TextBox ID="RegukarStackingTextBox" runat="server" Text='<%# Bind("RegularStack") %>' />
+                <br />
+                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </EditItemTemplate>
+            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <InsertItemTemplate>
+                Regular Stacking:
+                <asp:TextBox ID="RegukarStackingTextBox" runat="server" Text='<%# Bind("RegularStack") %>' />
+                <br />
+                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </InsertItemTemplate>
+            <ItemTemplate>
+                 Regular Stacking:
+                <asp:Label ID="RegukarStackingLabel" runat="server" Text='<%# Bind("RegularStack") %>' />
+                <br />
+
+            </ItemTemplate>
+            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+        </asp:FormView>        
+        <asp:FormView ID="FormView25" runat="server" CellPadding="4" DataSourceID="SqlDataSource30" ForeColor="#333333" Visible ="false">
+            <EditItemTemplate>
+                Regular Stacking:
+                <asp:TextBox ID="RegukarStackingTextBox" runat="server" Text='<%# Bind("RegularStack") %>' />
+                <br />
+                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </EditItemTemplate>
+            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <InsertItemTemplate>
+                Regular Stacking:
+                <asp:TextBox ID="RegukarStackingTextBox" runat="server" Text='<%# Bind("RegularStack") %>' />
+                <br />
+                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </InsertItemTemplate>
+            <ItemTemplate>
+                 Regular Stacking:
+                <asp:Label ID="RegukarStackingLabel" runat="server" Text='<%# Bind("RegularStack") %>' />
+                <br />
+
+            </ItemTemplate>
+            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+        </asp:FormView>        
+        <asp:FormView ID="FormView26" runat="server" CellPadding="4" DataSourceID="SqlDataSource30" ForeColor="#333333" Visible ="false">
+            <EditItemTemplate>
+                Regular Stacking:
+                <asp:TextBox ID="RegukarStackingTextBox" runat="server" Text='<%# Bind("RegularStack") %>' />
+                <br />
+                <asp:LinkButton ID="UpdateButton" runat="server" CausesValidation="True" CommandName="Update" Text="Update" />
+                &nbsp;<asp:LinkButton ID="UpdateCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </EditItemTemplate>
+            <FooterStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <HeaderStyle BackColor="#990000" Font-Bold="True" ForeColor="White" />
+            <InsertItemTemplate>
+                Regular Stacking:
+                <asp:TextBox ID="RegukarStackingTextBox" runat="server" Text='<%# Bind("RegularStack") %>' />
+                <br />
+                <asp:LinkButton ID="InsertButton" runat="server" CausesValidation="True" CommandName="Insert" Text="Insert" />
+                &nbsp;<asp:LinkButton ID="InsertCancelButton" runat="server" CausesValidation="False" CommandName="Cancel" Text="Cancel" />
+            </InsertItemTemplate>
+            <ItemTemplate>
+                 Regular Stacking:
+                <asp:Label ID="RegukarStackingLabel" runat="server" Text='<%# Bind("RegularStack") %>' />
+                <br />
+
+            </ItemTemplate>
+            <PagerStyle BackColor="#FFCC66" ForeColor="#333333" HorizontalAlign="Center" />
+            <RowStyle BackColor="#FFFBD6" ForeColor="#333333" />
+        </asp:FormView>        
 </p>
 </asp:Content>

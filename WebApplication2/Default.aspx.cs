@@ -9,8 +9,7 @@ using System.Web.UI.WebControls;
 namespace WebApplication2
 {
     public partial class _Default : Page
-    {
-        bool initial = true;
+    {       
         protected void Page_Load(object sender, EventArgs e)
         {
             /*if (initial)
@@ -80,43 +79,47 @@ namespace WebApplication2
             if (DropDownList2.Enabled)
                 if (DropDownList3.Enabled)
                 {
-                    /*StringBuilder outputText = new StringBuilder();
-                    string sel1 = DropDownList2.SelectedValue;
-                    string sel2 = DropDownList3.SelectedValue;
-                    SqlDataSource validate12 = new SqlDataSource();
-                    //validate12.ConnectionString =  ConnectionStrings:ConnectionString;
-                    //using(var conn = new SqlDataSource(connectionString))
-                    outputText.Append(sel1 + " compatible with " + sel2+" over 10g;");
-                    outputText.Append(sel1 + " compatible with " + sel2 + " over 80g, requires VIM3-40G4X option card;");
-                    outputText.Append(sel1 + " incompatible with " + sel2 + " over 160g;");
-                    string []a;
-                    a= new string[3];
-                    a= outputText.ToString().Split(';');*/
-                    //TextBox1.Text = a[0]+"  "+a[1]+"  "+a[2];
-                    //DataSet1 =SqlDataSource5.
                     FormView1.Visible = true;
                     FormView2.Visible = true;
                     FormView3.Visible = true;
+                    FormView16.Visible = true;
+                    FormView6.Visible = true;
+                    Panel12.Visible = true;
                     if (DropDownList4.Enabled)
                     {
                         FormView4.Visible = true;
                         FormView5.Visible = true;
-                        FormView6.Visible = true;
+                        FormView17.Visible = true;
+                        FormView18.Visible = true;
+                        FormView23.Visible = true;
+                        Panel23.Visible = true;
                         //FormViews for last to first
-                        FormView10.Enabled = true;
-                        FormView11.Enabled = true;
-                        FormView12.Enabled = true;
+                        FormView10.Visible = true;
+                        FormView11.Visible = true;
+                        FormView12.Visible = true;
+                        FormView20.Visible = true;
+                        FormView22.Visible = true;
+                        Panelfirstlast.Visible = true;
                         if (DropDownList5.Enabled)
                         {
                             FormView7.Visible = true;
                             FormView8.Visible = true;
                             FormView9.Visible = true;
                             FormView13.Visible = true;
+                            FormView23.Visible = true;
+                            //Between  dropdown 5 and 2
                             FormView14.Visible = true;
                             FormView15.Visible = true;
-                            FormView10.Enabled = false;
-                            FormView11.Enabled = false;
-                            FormView12.Enabled = false;
+                            FormView19.Visible = true;
+                            FormView21.Visible = true;
+                            FormView24.Visible = true;
+                            //Disable the formview between 2 and 4
+                            FormView10.Visible = false;
+                            FormView11.Visible = false;
+                            FormView12.Visible = false;
+                            FormView20.Visible = false;
+                            FormView22.Visible = false;
+                            Panel34.Visible = true;
                         }
                     }
                 }
